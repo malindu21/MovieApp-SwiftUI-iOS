@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="MovieApp" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="99999" systemVersion="24E5217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier1="" userDefinedModelVersionIdentifier2="">
+    <entity name="CachedMovieEntity" representedClassName="CachedMovieEntity" syncable="YES">
+        <attribute name="movieId" optional="NO" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="NO" attributeType="String"/>
+        <attribute name="overview" optional="NO" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String"/>
+        <attribute name="posterPath" optional="YES" attributeType="String"/>
+        <attribute name="query" optional="NO" attributeType="String"/>
+        <attribute name="page" optional="NO" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="orderIndex" optional="NO" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalPages" optional="NO" attributeType="Integer 64" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="lastUpdated" optional="NO" attributeType="Date"/>
+    </entity>
+    <entity name="FavoriteMovieEntity" representedClassName="FavoriteMovieEntity" syncable="YES">
+        <attribute name="movieId" optional="NO" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="NO" attributeType="String"/>
+        <attribute name="overview" optional="NO" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String"/>
+        <attribute name="posterPath" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="NO" attributeType="Date"/>
+    </entity>
+    <entity name="AppStateEntity" representedClassName="AppStateEntity" syncable="YES">
+        <attribute name="lastQuery" optional="YES" attributeType="String"/>
+    </entity>
+</model>
