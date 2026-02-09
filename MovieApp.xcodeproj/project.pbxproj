@@ -6,6 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		F7BEDC432F39E6C1003C5135 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7BEDC172F39E6BF003C5135 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7BEDC1E2F39E6BF003C5135;
+			remoteInfo = MovieApp;
+		};
+		F7BEDC452F39E6C1003C5135 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7BEDC172F39E6BF003C5135 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7BEDC1E2F39E6BF003C5135;
+			remoteInfo = MovieApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F7BEDC1F2F39E6BF003C5135 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BEDC352F39E6C1003C5135 /* MovieAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +141,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F7BEDC442F39E6C1003C5135 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				F7BEDC362F39E6C1003C5135 /* MovieAppTests */,
@@ -144,6 +162,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F7BEDC462F39E6C1003C5135 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				F7BEDC3F2F39E6C1003C5135 /* MovieAppUITests */,
@@ -188,6 +207,19 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXTargetDependency section */
+		F7BEDC442F39E6C1003C5135 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7BEDC1E2F39E6BF003C5135 /* MovieApp */;
+			targetProxy = F7BEDC432F39E6C1003C5135 /* PBXContainerItemProxy */;
+		};
+		F7BEDC462F39E6C1003C5135 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7BEDC1E2F39E6BF003C5135 /* MovieApp */;
+			targetProxy = F7BEDC452F39E6C1003C5135 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F7BEDC1D2F39E6BF003C5135 /* Resources */ = {
@@ -447,9 +479,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = prod.malindudev.MovieAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieApp.app/MovieApp";
+				TEST_TARGET_NAME = MovieApp;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(TEST_TARGET_NAME).app/$(TEST_TARGET_NAME)";
 			};
 			name = Debug;
 		};
@@ -464,9 +498,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = prod.malindudev.MovieAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieApp.app/MovieApp";
+				TEST_TARGET_NAME = MovieApp;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(TEST_TARGET_NAME).app/$(TEST_TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -480,6 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = prod.malindudev.MovieAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_TARGET_NAME = MovieApp;
@@ -496,6 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = prod.malindudev.MovieAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_TARGET_NAME = MovieApp;
