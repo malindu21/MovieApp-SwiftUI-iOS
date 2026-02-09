@@ -23,6 +23,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		F7BEDC472F39E6C1003C5135 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7BEDC482F39E6C1003C5135 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7BEDC472F39E6C1003C5135 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin PBXFileReference section */
 		F7BEDC1F2F39E6BF003C5135 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BEDC352F39E6C1003C5135 /* MovieAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +144,7 @@
 			);
 			name = MovieApp;
 			packageProductDependencies = (
+				F7BEDC482F39E6C1003C5135 /* Lottie */,
 			);
 			productName = MovieApp;
 			productReference = F7BEDC1F2F39E6BF003C5135 /* MovieApp.app */;
@@ -198,6 +218,9 @@
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F7BEDC202F39E6BF003C5135 /* Products */;
+			packageReferences = (
+				F7BEDC472F39E6C1003C5135 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -207,19 +230,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXTargetDependency section */
-		F7BEDC442F39E6C1003C5135 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F7BEDC1E2F39E6BF003C5135 /* MovieApp */;
-			targetProxy = F7BEDC432F39E6C1003C5135 /* PBXContainerItemProxy */;
-		};
-		F7BEDC462F39E6C1003C5135 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F7BEDC1E2F39E6BF003C5135 /* MovieApp */;
-			targetProxy = F7BEDC452F39E6C1003C5135 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F7BEDC1D2F39E6BF003C5135 /* Resources */ = {
@@ -268,6 +278,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7BEDC442F39E6C1003C5135 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7BEDC1E2F39E6BF003C5135 /* MovieApp */;
+			targetProxy = F7BEDC432F39E6C1003C5135 /* PBXContainerItemProxy */;
+		};
+		F7BEDC462F39E6C1003C5135 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7BEDC1E2F39E6BF003C5135 /* MovieApp */;
+			targetProxy = F7BEDC452F39E6C1003C5135 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F7BEDC2C2F39E6C1003C5135 /* Debug */ = {
@@ -482,8 +505,8 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = MovieApp;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(TEST_TARGET_NAME).app/$(TEST_TARGET_NAME)";
+				TEST_TARGET_NAME = MovieApp;
 			};
 			name = Debug;
 		};
@@ -501,8 +524,8 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = MovieApp;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(TEST_TARGET_NAME).app/$(TEST_TARGET_NAME)";
+				TEST_TARGET_NAME = MovieApp;
 			};
 			name = Release;
 		};

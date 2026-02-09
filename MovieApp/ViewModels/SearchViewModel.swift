@@ -27,6 +27,37 @@ final class SearchViewModel: ObservableObject {
         self.cache = cache
     }
 
+    private var searchTask: Task<Void, Never>?
+    private let minimumQueryLength = 3
+
+    func onQueryChanged() {
+        searchTask?.cancel()
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard !trimmed.isEmpty else {
+            movies = []
+            errorMessage = nil
+            isFromCache = false
+            lastUpdated = nil
+            isLoading = false
+            return
+        }
+
+        guard trimmed.count >= minimumQueryLength else {
+            movies = []
+            errorMessage = nil
+            isFromCache = false
+            lastUpdated = nil
+            isLoading = false
+            return
+        }
+
+        searchTask = Task {
+            try? await Task.sleep(nanoseconds: 500_000_000)
+            await search(reset: true)
+        }
+    }
+
     func loadLastCachedQueryIfNeeded() {
         guard movies.isEmpty, let lastQuery = cache.lastQuery() else { return }
         query = lastQuery
@@ -48,6 +79,14 @@ final class SearchViewModel: ObservableObject {
     func search(reset: Bool = true) async {
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else {
+            movies = []
+            errorMessage = nil
+            isFromCache = false
+            lastUpdated = nil
+            return
+        }
+
+        guard trimmed.count >= minimumQueryLength else {
             movies = []
             errorMessage = nil
             isFromCache = false
@@ -77,7 +116,15 @@ final class SearchViewModel: ObservableObject {
         errorMessage = nil
 
         do {
+            if Task.isCancelled {
+                isLoading = false
+                return
+            }
             let response = try await client.searchMovies(query: query, page: page)
+            if Task.isCancelled {
+                isLoading = false
+                return
+            }
             if reset {
                 movies = response.results
             } else {
@@ -88,6 +135,10 @@ final class SearchViewModel: ObservableObject {
             isFromCache = false
             cache.cache(query: query, page: page, results: response.results, totalPages: response.totalPages)
         } catch {
+            if error is CancellationError {
+                isLoading = false
+                return
+            }
             if let cached = cache.cachedPage(query: query, page: page) {
                 if reset {
                     movies = cached

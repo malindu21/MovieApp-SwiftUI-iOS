@@ -20,12 +20,17 @@ struct SearchView: View {
             Group {
                 if viewModel.movies.isEmpty && viewModel.query.isEmpty {
                     emptyState
+                } else if viewModel.movies.isEmpty && viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).count < 3 {
+                    typingState
                 } else {
                     resultsList
                 }
             }
             .navigationTitle(AppStrings.UI.searchScreenTitle)
             .searchable(text: $viewModel.query, prompt: AppStrings.UI.searchPrompt)
+            .onChange(of: viewModel.query) { _, _ in
+                viewModel.onQueryChanged()
+            }
             .onSubmit(of: .search) {
                 Task { await viewModel.search(reset: true) }
             }
@@ -47,12 +52,22 @@ struct SearchView: View {
                 }
             }
             .overlay(alignment: .bottom) {
+                EmptyView()
+            }
+            .overlay {
                 if viewModel.isLoading {
-                    ProgressView(AppStrings.UI.loading)
-                        .padding(12)
-                        .background(.ultraThinMaterial)
-                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        .padding(.bottom, 16)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(.ultraThinMaterial)
+                            .frame(width: 180, height: 180)
+                        VStack(spacing: 8) {
+                            LottieView(name: AppStrings.UI.lottieLoadingName, loopMode: .loop)
+                                .frame(width: 120, height: 120)
+                            Text(AppStrings.UI.loading)
+                                .font(.subheadline)
+                                .foregroundStyle(Color.secondary)
+                        }
+                    }
                 }
             }
             .alert(AppStrings.UI.errorTitle, isPresented: $showError, actions: {
@@ -79,6 +94,20 @@ struct SearchView: View {
                 .foregroundStyle(Color.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var typingState: some View {
+        VStack(spacing: 10) {
+            Image(systemName: AppStrings.SystemImage.magnifyingGlass)
+                .font(.system(size: 34))
+                .foregroundStyle(Color.secondary)
+            Text(AppStrings.UI.typingHint)
+                .font(.headline)
+            Text(AppStrings.UI.typingHintDetail)
+                .font(.subheadline)
+                .foregroundStyle(Color.secondary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

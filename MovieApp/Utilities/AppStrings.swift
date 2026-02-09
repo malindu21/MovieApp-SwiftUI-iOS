@@ -17,12 +17,15 @@ enum AppStrings {
         static let searchPrompt = "Search by title"
         static let clearButton = "Clear"
         static let loading = "Loading…"
+        static let lottieLoadingName = "loading"
         static let errorTitle = "Something went wrong"
         static let unknownError = "Unknown error"
         static let okButton = "OK"
 
         static let emptyStateTitle = "Search for movies"
-        static let emptyStateMessage = "Results will appear here. Offline results load automatically if available."
+        static let emptyStateMessage = "Type at least 3 characters to start searching."
+        static let typingHint = "Keep typing to search"
+        static let typingHintDetail = "Results appear after 3 characters."
 
         static let offlineBanner = "You are offline. Showing cached results."
         static let cachedResultsTitle = "Cached results"
