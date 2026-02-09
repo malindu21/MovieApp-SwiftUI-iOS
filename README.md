@@ -5,9 +5,9 @@ A simple iOS movie search app using The Movie Database (TMDB) API.
 ## Sample Screenshots
 
 <p align="center">
+    <img src="https://github.com/user-attachments/assets/6ceef0e4-98a0-4175-92f9-a17945dcc526" width="250"/>
   <img src="https://github.com/user-attachments/assets/6e180fa8-42e9-4fa7-a1ff-4a669cc59d8f" width="250"/>
   <img src="https://github.com/user-attachments/assets/0d9c1627-a018-4662-8c3f-b3729f318c4a" width="250"/>
-  <img src="https://github.com/user-attachments/assets/6ceef0e4-98a0-4175-92f9-a17945dcc526" width="250"/>
   <img src="https://github.com/user-attachments/assets/1052d3ec-ab93-4b2e-945f-f6e600a83382" width="250"/>
 </p>
 
