@@ -4,14 +4,12 @@ A simple iOS movie search app using The Movie Database (TMDB) API.
 
 ## Sample Screenshots
 
-![Uploading Simulator Screenshot - iPhone 16 Pro - 2026-02-09 at 18.38.56.png…]()
-![Uploading Simulator Screenshot - iPhone 16 Pro - 2026-02-09 at 18.38.56.png…]()
-
-<img width="1206" height="2622" alt="Simulator Screenshot - iPhone 16 Pro - 2026-02-09 at 18 38 54" src="https://github.com/user-attachments/assets/e3b6c9d5-629f-40f3-8b19-d4d9fe8c9bed" />
-<img width="1206" height="2622" alt="Simulator Screenshot - iPhone 16 Pro - 2026-02-09 at 18 38 54" src="https://github.com/user-attachments/assets/e3b6c9d5-629f-40f3-8b19-d4d9fe8c9bed" />
-[Uploading Simulator Screenshot - iPhone 16 Pro - 2026-02-09 at 18.38.52.png…]()
-<img width="1206" height="2622" alt="Simulator Screenshot - iPhone 16 Pro - 2026-02-09 at 18 38 52" src="https://github.com/user-attachments/assets/520620cc-809e-4103-b047-e23953ca16b3" />
-<img width="1206" height="2622" alt="Simulator Screenshot - iPhone 16 Pro - 2026-02-09 at 18 38 52" src="https://github.com/user-attachments/assets/520620cc-809e-4103-b047-e23953ca16b3" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1052d3ec-ab93-4b2e-945f-f6e600a83382" width="250"/>
+  <img src="https://github.com/user-attachments/assets/6e180fa8-42e9-4fa7-a1ff-4a669cc59d8f" width="250"/>
+  <img src="https://github.com/user-attachments/assets/0d9c1627-a018-4662-8c3f-b3729f318c4a" width="250"/>
+  <img src="https://github.com/user-attachments/assets/6ceef0e4-98a0-4175-92f9-a17945dcc526" width="250"/>
+</p>
 
 ## Features
 - Search movies by title
